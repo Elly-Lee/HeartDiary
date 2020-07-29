@@ -1,0 +1,68 @@
+@charset "utf-8";
+
+/* 노말라이즈 */
+body, ul, li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+body {
+	background-color : #E6E6FA;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* 라이브러리 */
+.con , .j {
+	width: 600px;
+	text-align:center;	
+}
+
+.j {	
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.table-box>table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.table-box>table td, .table-box>table th {
+	padding: 10px;
+	border: 1px solid black;
+}
+
+
+.table-box>table input[type="text"], .table-box>table input[type="password"],
+	.table-box>table input[type="tel"], .table-box>table textarea {
+	width:50%;
+}
+
+.height-100px {
+	height: 100px;
+}
+
+.height-200px {
+	height: 200px;
+}
+
+.margin-top-30 {
+	margin-top:30px;
+}
+
+.text-align-center {
+	text-align:center;
+}
+
+/* 커스텀 */
+.con {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
