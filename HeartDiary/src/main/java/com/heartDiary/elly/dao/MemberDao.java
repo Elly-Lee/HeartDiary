@@ -1,14 +1,20 @@
 package com.heartDiary.elly.dao;
 
+import java.util.Map;
+
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import com.heartDiary.elly.dto.Member;
+import com.heartDiary.elly.model.ModelResult;
 
 @Mapper
 public interface MemberDao {
 
-	Member getMemberByLoginId(String loginId);
+	Member getMemberByLoginId(@Param("loginId") String loginId);	
 
-	Member getMemberById(int loginedId);
+	void joinMember(Map<String, Object> param);
 
+	int idCheck(String loginId);
+	
 }

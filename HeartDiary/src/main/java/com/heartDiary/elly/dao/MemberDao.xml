@@ -3,16 +3,31 @@
 
 <mapper namespace="com.heartDiary.elly.dao.MemberDao">
 
+	<select id="idCheck" resultType="int">
+		SELECT COUNT(*)
+		FROM heartDiary.member
+		WHERE loginId = #{loginId}
+	</select>
+	
+	<insert id="joinMember" parameterType="map"	useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO member
+		SET regDate = NOW(),
+		loginId = #{loginId},
+		loginPw = #{loginPw},
+		nickName = #{nickName}
+	</insert>
+
 	<select id="getMemberByLoginId" resultType="Member">
 		SELECT *
 		FROM member
 		WHERE loginId = #{loginId}
 	</select>
-	
+
 	<select id="getMemberById" resultType="Member">
 		SELECT *
 		FROM member
-		WHERE id = #{id}
+		WHERE
+		id = #{id}
 	</select>
 
 

@@ -33,13 +33,13 @@ public class WebMvcConfig implements WebMvcConfigurer {
 		// 메인, 로그인, 로그인 처리, 가입, 가입 처리, 게시물 리스트, 게시물 상세 빼고는 모두 로그인 상태여야 
 		// 접근이 가능하다.
 		registry.addInterceptor(needToLoginInterceptor).addPathPatterns("/**").excludePathPatterns("/resource/**")
-				.excludePathPatterns("/").excludePathPatterns("/member/login").excludePathPatterns("/member/doLogin")
+				.excludePathPatterns("/css/**").excludePathPatterns("/member/login").excludePathPatterns("/member/doLogin")
 				.excludePathPatterns("/member/join").excludePathPatterns("/member/doJoin")
-				.excludePathPatterns("/diary/list").excludePathPatterns("/diary/detail").excludePathPatterns("/home/**");;
+				.excludePathPatterns("/diary/list").excludePathPatterns("/member/idCheck").excludePathPatterns("/diary/detail").excludePathPatterns("/member/doLogout");;
 
 		// 로그인, 로그인처리, 가입, 가입 처리는 로그인 상태일 때 접근할 수 없다.
-		registry.addInterceptor(needToLogoutInterceptor)
-				.addPathPatterns("/member/join").addPathPatterns("/member/doJoin");
+		registry.addInterceptor(needToLogoutInterceptor).addPathPatterns("/member/login")
+				.addPathPatterns("/member/doLogin").addPathPatterns("/member/join").addPathPatterns("/member/doJoin");
 
 	}
 }
