@@ -22,6 +22,8 @@ a {
 	text-align:center;	
 }
 
+
+
 .j {	
 	margin-left: auto;
 	margin-right: auto;
@@ -59,10 +61,24 @@ a {
 	text-align:center;
 }
 
+.table-box>table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+
+
 /* 커스텀 */
 .con {
 	margin-left: auto;
 	margin-right: auto;
 }
+
+
+.t1 {
+	width: 600px;
+	magin-left: 200px;
+}
+
 
 

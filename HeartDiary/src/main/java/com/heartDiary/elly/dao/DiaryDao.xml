@@ -3,10 +3,43 @@
 
 <mapper namespace="com.heartDiary.elly.dao.DiaryDao">
 
+	<update id="modifyDiary">
+		UPDATE diary
+		<set>
+			<if test="title != null">title=#{title},</if>
+			<if test="body != null">body=#{body},</if>			
+		</set>
+		WHERE id =
+		#{id}
+	</update>
+
+	<delete id="deleteDiary">
+		DELETE
+		FROM diary
+		WHERE id = #{id}
+	</delete>
+
+	<insert id="writeDiary" parameterType="map"
+		useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO diary
+		SET regDate =
+		NOW(),
+		title = #{title},
+		body = #{body}
+	</insert>
+
+	<select id="getDiary" resultType="Diary">
+		SELECT *
+		FROM diary
+		WHERE id =
+		#{id}
+	</select>
+
 	<select id="getDiaries" resultType="Diary">
 		SELECT *
 		FROM diary
-		ORDER BY id DESC
+		ORDER BY id
+		DESC
 	</select>
 
 	<!-- <select id="getOne" parameterType="long" resultType="Article"> SELECT 

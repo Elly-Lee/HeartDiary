@@ -3,15 +3,47 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <c:set var="pageName" value="로그인" />
-<%@ include file="../part/head.jspf"%>
-<h1 class="con">H - Diary</h1>
-<h2 class ="title con">회 원 가 입</h2>
+
+
+<style>
+body, ul, li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+body {
+	background-color : #E6E6FA;
+	text-align:center;
+}
+
+main  {
+	text-align:center;
+	
+}
+
+h1 {
+	color:white;
+	background-color: #333;
+	padding: 30px;
+	display:block;
+}
+
+td {
+	padding: 10px;
+}
+
+</style>
+
+
+<h1 class="con">H - Diary 회원가입 </h1>
+
 
 <form id="join__form" name="join" action="doJoin">
 	<div class="table-box con">
-		<table>
+		<table style="margin: 0 auto;">
 			<tbody>
-				<tr>
+				<tr style="padding: 10px;">
 					<th>ID</th>
 					<td><input type="text" id="loginId" name="loginId"
 						placeholder="아이디를 입력해주세요." autofocus="autofocus" /></td>
